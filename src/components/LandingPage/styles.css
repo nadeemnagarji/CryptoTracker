@@ -50,15 +50,15 @@
 .p1{
     position: absolute;
     top: 0;
-    left: 50%;
-    width: 100%;
+    left: 10%;
+    width: 50%;
     z-index: 1;
 }
 .g1{
     position: absolute;
-    width: 80%;
-    top: 150px;
-    left: 70%;
+    width: 40%;
+    top: 120px;
+    left: 20%;
 
 }
 

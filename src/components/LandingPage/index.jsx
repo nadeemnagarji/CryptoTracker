@@ -55,7 +55,7 @@ export default function MainComponent(params) {
                  src={Phone} alt="" />
                 <img className='g1' src={gradient}  alt="" />
             </div>
-            <div className='right'></div>
+      
         </div>
     )
 };
