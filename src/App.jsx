@@ -5,10 +5,14 @@ import './App.css'
 import Footer from './components/Common/Footer/index.jsx'
 import Header from './components/Common/Header/index.jsx'
 import MainComponent from './components/LandingPage/index.jsx'
+import { Route, BrowserRouter as Router, Routes } from 'react-router-dom'
+
 
 
 function App() {
   const [count, setCount] = useState(0)
+
+  
 
   return (
     <>
