@@ -1,0 +1,21 @@
+.grid-flex{
+    display: flex;
+    gap:3rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 3rem;
+    align-items: center;
+ 
+}
+
+.list-flex{
+    display: block;
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 2rem;
+}
+table {
+    border-collapse: separate;
+}
+
