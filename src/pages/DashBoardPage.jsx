@@ -23,7 +23,10 @@ useEffect(()=>{
         fetchCoins()
 },[])
 
-const filteredcoins = coins.filter(coin=>coin.name.includes(input))
+const filteredcoins = coins.filter(coin=>
+    coin.name.toLowerCase().includes(input.toLowerCase()) || // bitcoin ethereum ie.e. full name
+    coin.symbol.toLowerCase().includes(input.toLowerCase())  // btc  eth i.e. shortname
+    )
 
 
 
