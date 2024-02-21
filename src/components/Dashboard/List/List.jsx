@@ -3,6 +3,8 @@ import './styles.css'
 import TrendingUpIcon from '@mui/icons-material/TrendingUp';
 import TrendingDownIcon from '@mui/icons-material/TrendingDown';
 import { Tooltip } from '@mui/material';
+import { convertNumbers } from '../../../functions/convertNumber';
+
 export default function List({coin}) {
     return(
         <tr className='list-row'>
@@ -23,35 +25,48 @@ export default function List({coin}) {
             {coin.price_change_percentage_24h  > 0 ?  
 
         <td className='chip-flex align-center'>
-                <div className='price-chip'>
-                    {coin.price_change_percentage_24h.toFixed(2)} %
+                <div className='price-chip font-less'>
+                    +{coin.price_change_percentage_24h.toFixed(2)} %
                 </div>
                 <div className='trend-icon'>
                 <TrendingUpIcon />
                 </div>
         </td> 
         :<td className='chip-flex align-center td-right-align'>
-            <div className='price-chip chip-red '>
+            <div className='price-chip chip-red font-less'>
                 {coin.price_change_percentage_24h.toFixed(2)} %
             </div>
-            <div className='trend-icon chip-red'>
+            <div className='trend-icon red '>
             <TrendingDownIcon />
             </div>
         </td>
             }
             </Tooltip>
+
+            <Tooltip title="current price">
+
            
-        <td className={coin.price_change_percentage_24h>0 ?"price align-center":"price price-red align-center"}>
+        <td className={coin.price_change_percentage_24h>0 ?"price align-center font-less":"price price-red align-center font-less"}>
                 ${coin.current_price.toLocaleString()}
         </td>
             
-            
+        </Tooltip>
+        <Tooltip title="volume">
          <td className='flex'>   
          <p className='volume align-center  font-bold'> {coin.total_volume.toLocaleString()}</p>
          </td>
-         <td className='flex' >
-            <p className='mar-cap  font-bold'>{coin.market_cap.toLocaleString()}</p>
+         </Tooltip>
+         <Tooltip title="market cap" >
+         <td className='flex desktop-td-mkcp' >
+            <p className='mar-cap  font-bold font-less'>{coin.market_cap.toLocaleString()}</p>
             </td>
+            </Tooltip>
+
+            <Tooltip title="market cap" >
+         <td className='flex mobile-td-mkcp align-right' >
+            <p className='mar-cap  font-bold font-less'>{convertNumbers(coin.market_cap)}</p>
+            </td>
+            </Tooltip>
         </tr>
     )
 };

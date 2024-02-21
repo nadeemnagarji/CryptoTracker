@@ -2,8 +2,11 @@ import React, { useEffect, useState } from 'react';
 import Header from '../components/Common/Header';
 import Tabs from '../components/Dashboard/Tabs';
 import axios  from 'axios';
-export default function DashBoardPage(params) {
+import Input from '../components/Dashboard/Search';
 
+
+export default function DashBoardPage(params) {
+    const[input,setInput] = useState(null)
     const [coins ,setCoins] = useState([])
 
     const fetchCoins = async()=>{
@@ -20,10 +23,15 @@ useEffect(()=>{
         fetchCoins()
 },[])
 
+const filteredcoins = coins.filter(coin=>coin.name.includes(input))
+
+
+
     return(
         <div>
             <Header />
-            <Tabs coins= {coins} />
+            <Input  placeholder={"Search"} search={input} onchange={setInput}/>
+            <Tabs coins={filteredcoins} />
         </div>
     )
 };

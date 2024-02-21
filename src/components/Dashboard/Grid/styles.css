@@ -124,3 +124,38 @@
     scale:1.03;
     transition: scale 0.3s ease-in-out ;
 }
+
+@media only screen and(max-width:800px){
+  .grid-container{
+    background-color: red;
+  }
+}
+
+@media only screen and (max-width: 750px){
+    .grid-container .image-title{
+        /* background-color: red; */
+        align-items: center;
+    }
+    .grid-container .coin-info{
+        /* background-color: green; */
+        height: 80%;
+    }
+    .grid-container .symbol {
+        font-size: 1rem;
+       
+    }
+    .grid-container .name {
+        font-size: 0.8rem;
+    }
+
+   
+    .grid-container 
+    .grid-container .image-title .coin-info{
+        margin-top: 0.5rem;
+    }
+
+    .grid-container .chip-flex .price-chip{
+      font-size: 0.8rem;
+      width: 100%;
+    }
+}
