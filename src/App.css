@@ -58,3 +58,12 @@ a{
   color: var(--grey) !important ;
 }
 
+.pagination-container{
+  background-color: red;
+  margin-bottom: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    margin: auto;
+}
