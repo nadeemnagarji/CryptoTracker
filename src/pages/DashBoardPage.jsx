@@ -4,7 +4,9 @@ import Tabs from '../components/Dashboard/Tabs';
 import axios  from 'axios';
 import Input from '../components/Dashboard/Search';
 import PaginationControlled from '../components/Pagination/Pagination';
-
+import { CircularProgress } from '@mui/material';
+import Loader from '../components/Common/Loader';
+import BackToTop from '../components/Common/BacktoTop';
 
 
 export default function DashBoardPage(params) {
@@ -12,7 +14,7 @@ export default function DashBoardPage(params) {
     const [coins ,setCoins] = useState([])
     const [page,setPage] = useState(1)
     const [paginatedCoins,setPaginatedCoins] = useState([])
-
+    const [isloading,setisLoading] = useState(true)
 
     const handlePageChange =(event,value)=>{
         setPage(value)
@@ -31,6 +33,7 @@ export default function DashBoardPage(params) {
             const res = await axios.get("https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false&locale=en")
             console.log(res.data);
             setCoins(res.data)
+            setisLoading(false)
             setPaginatedCoins(res.data.slice(0,10))
         } catch (error) {
             
@@ -50,12 +53,24 @@ const filteredcoins = input &&  coins.filter(coin=>
 
 
     return(
-        <div>
+        <>
+        {
+        isloading ? 
+            <div>
+                <Header />
+                <BackToTop />
+                <Loader />
+            </div>
+
+        :   <div>
             <Header />
+            <BackToTop />
             <Input  placeholder={"Search"} search={input} onchange={setInput}/>
-            <Tabs coins={input?filteredcoins : paginatedCoins } />
+            {coins?  <Tabs coins={input?filteredcoins : paginatedCoins } />: <Loader />}
             <PaginationControlled page={page} handlePageChange={handlePageChange}/>
-        </div>
+            </div>
+        }
+        </>
     )
 };
 

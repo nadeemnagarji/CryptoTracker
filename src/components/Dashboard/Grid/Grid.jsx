@@ -2,10 +2,12 @@ import React from 'react';
 import './styles.css'
 import TrendingUpIcon from '@mui/icons-material/TrendingUp';
 import TrendingDownIcon from '@mui/icons-material/TrendingDown';
+import { Link } from 'react-router-dom';
 
 export default function Grid({coin}) {
     
     return(
+        <Link to={`/coin/${coin.id}`}>
         <div className={`grid-container ${
             coin.price_change_percentage_24h <0 && "grid-container-red"
         }`}>
@@ -44,6 +46,7 @@ export default function Grid({coin}) {
             <p className='volume'><span>Total Volume:</span> {coin.total_volume.toLocaleString()}</p>
             <p className='mar-cap'><span>Market Cap : $</span>{coin.market_cap.toLocaleString()}</p>
         </div>
+        </Link>
     )
 };
 

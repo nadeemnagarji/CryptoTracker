@@ -16,8 +16,13 @@ export default function Tabs({coins}) {
     setValue(newValue);
   };
 
+
+ 
+
+
   return (
     <div sx={{ width: '100%', typography: 'body1' }}>
+      
       <TabContext value={value}>
        
           <TabList onChange={handleChange} variant='fullWidth'>
