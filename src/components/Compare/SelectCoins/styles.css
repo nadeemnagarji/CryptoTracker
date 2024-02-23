@@ -1,0 +1,9 @@
+.selectcoins-container{
+    display: flex;
+    padding: 1rem;
+    gap: 2.5rem;
+}
+.selectcoins-container div{
+    display: flex;
+    gap: 0.5rem;
+}

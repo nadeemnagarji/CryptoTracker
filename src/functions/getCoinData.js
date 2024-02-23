@@ -16,5 +16,5 @@ export const getCoinData = async (id)=>{
 /*
  coinObject(setCoin,res.data)
             setisLoading(false)
-
+`
 */

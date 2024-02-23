@@ -2,7 +2,7 @@ import React from 'react';
 import './styles.css'
 import TempDrawer from './Drawer';
 import Button from '../Button';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 export default function Header(params) {
 
@@ -16,7 +16,7 @@ export default function Header(params) {
           <h1 className='logo'>CryptoTracker</h1>
           <div className='nav-links'>
             <a href=""><p>Home</p></a>
-            <a href=""><p>Compare</p></a>
+            <Link to="/compare"><p>Compare</p></Link>
             <Button name={"Dashboard"} outline={false} onClickFn={moveToDashBoard} />
            
           </div>

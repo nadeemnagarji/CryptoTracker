@@ -29,6 +29,7 @@ body{
   background-color: var(--black);
   color: var(--white);
   font-family: 'Inter', sans-serif;
+  
 
   
 }
@@ -103,3 +104,26 @@ html{
   display: flex;
   justify-content: center;
 }
+
+
+
+/**************COMPARE PAGE CSS*/
+
+.compare-wrapper{
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  
+}
+.compare-lists{
+  gap: 1rem;
+  background-color: var(--darkgrey);
+  margin-top: 1rem;
+  width: 98%;
+  margin: 1rem auto;
+  border-radius: 2rem;
+  height: 6rem;
+  align-items: center;
+
+}
+
