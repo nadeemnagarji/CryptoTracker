@@ -6,7 +6,7 @@ import { useState } from 'react';
 
 export default function CoinInfo({heading,desc}) {
 
-    const shortDesc =` ${desc.slice(9,200)}<span class="read-more"> ReadMore</span>`
+    const shortDesc =` ${desc.slice(0,200)}<span class="read-more"> ReadMore</span>`
     const longDesc = `${desc} <span class="read-more"> Read Less</span>  `
 
     const [toggle,setToggle] = useState(false)

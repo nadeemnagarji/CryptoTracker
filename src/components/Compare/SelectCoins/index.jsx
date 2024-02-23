@@ -15,6 +15,7 @@ export default function SelectCoins({crypto1,crypto2,handleCoinsChange}) {
 
     const getData = async()=>{
         const myCoins = await get100Coins()
+        console.log(myCoins);
         setAllCoins(myCoins)
     }
 
@@ -37,22 +38,22 @@ export default function SelectCoins({crypto1,crypto2,handleCoinsChange}) {
             value={crypto1}
             onChange={(event)=>handleCoinsChange(event)}
         >
-        { allCoins && allCoins.map((coin,i)=>
-        <MenuItem value={coin.id}>{coin.name}</MenuItem>)
+        { allCoins && allCoins.filter((item)=> item.id != crypto2)
+        .map((coin,i)=><MenuItem value={coin.id}>{coin.name}</MenuItem>)
         }
         </Select>
         
         </div> 
         <div>
-        <p>Crypto 1</p>
+        <p>Crypto 2</p>
        <Select
             labelId="demo-simple-select-label"
             id="demo-simple-select"
             value={crypto2}
             onChange={(event)=>handleCoinsChange(event,true)}
         >
-        { allCoins && allCoins.map((coin,i)=>
-        <MenuItem value={coin.id}>{coin.name}</MenuItem>)
+        { allCoins && allCoins.filter((item)=> item.id != crypto1).map((coin,i)=>
+        <MenuItem key={i} value={coin.id}>{coin.name}</MenuItem>)
         }
         </Select>
         
