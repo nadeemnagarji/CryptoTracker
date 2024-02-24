@@ -8,7 +8,7 @@ import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 
-export default function SelectDays({days,handleDaysChange}) {
+export default function SelectDays({days,handleDaysChange,label}) {
 
 
   
@@ -16,7 +16,7 @@ export default function SelectDays({days,handleDaysChange}) {
   return (
     <div  className='select-days' sx={{ minWidth: 120, maxWidth:100 }}>
 
-        <p>Days</p>
+        <p>{label}</p>
         <Select 
             labelId="demo-simple-select-label"
             id="demo-simple-select"

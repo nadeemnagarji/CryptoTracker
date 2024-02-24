@@ -37,7 +37,7 @@ export default function CoinPage(params) {
             setisLoading(false)
         }
         const coinPrices = await getCoinPrices(id,days)
-        console.log(coinPrices);
+       // console.log(coinPrices);
         settingChartData(setChartData,coinPrices)
     }
 
@@ -52,7 +52,7 @@ export default function CoinPage(params) {
     const handleTypeChange = async(event, newAlignment) => {
             setisLoading(true)
             setAlignment(newAlignment);
-            console.log(event.target.value);
+            //console.log(event.target.value);
             const price = await getTypeChart(id,days,event.target.value)
             setpriceType(event.target.value)
             settingChartData(setChartData,price)
@@ -60,7 +60,7 @@ export default function CoinPage(params) {
            // console.log(price);
           };
 
-          console.log(chartData);
+         // console.log(chartData);
     useEffect(()=>{
        fetchCoins(id)
     },[])
@@ -80,7 +80,7 @@ export default function CoinPage(params) {
             <div className='chart-wraper'>
                 <div className='selector-wrapper'>
                     <p>Price change in last</p>
-                < SelectDays days={days} handleDaysChange={handleDaysChange}/>
+                < SelectDays days={days}  handleDaysChange={handleDaysChange}/>
                 </div>
 
                 <div className='price-mk-vol-toggle'>

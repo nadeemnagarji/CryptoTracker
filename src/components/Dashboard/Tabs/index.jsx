@@ -33,13 +33,13 @@ export default function Tabs({coins}) {
         <TabPanel value="grid">
         <div className='grid-flex'>
         {coins &&
-        coins.map((coin,i)=><Grid coin={coin} />)}
+        coins.map((coin,i)=><Grid key={`g-${i}`} coin={coin} />)}
         </div>
         </TabPanel>
         <TabPanel value="List">
         <table className='list-flex'>
         {coins &&
-        coins.map((coin,i)=><List coin={coin} />)}
+        coins.map((coin,i)=><List key={`l-${i}`} coin={coin} />)}
         </table>
         </TabPanel>
         <TabPanel value="3">Item Three</TabPanel>

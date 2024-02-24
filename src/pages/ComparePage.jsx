@@ -38,13 +38,13 @@ export default function ComparePage(params) {
         const prices2 = await getTypeChart(crypto2,days,priceType)
         const prices1 = await getTypeChart(crypto1,days,priceType)
         settingChartData(setChartData,prices1,prices2,crypto1,crypto2)
-        console.log(prices1,prices2);
+       // console.log(prices1,prices2);
     
     }
 
     const handleTypeChange = async(event, newAlignment) => {
         setAlignment(newAlignment);
-        console.log(event.target.value);
+        //console.log(event.target.value);
         const price1 = await getTypeChart(crypto1,days,event.target.value)
         const price2 = await getTypeChart(crypto2,days,event.target.value)
         setPriceType(event.target.value)
@@ -75,15 +75,15 @@ export default function ComparePage(params) {
             const prices1 = await getCoinPrices(crypto1,days)
          
             const prices2 = await getCoinPrices(crypto2,days)
-            console.log(prices1,prices2);
+           // console.log(prices1,prices2);
             settingChartData(setChartData,prices1,prices2,crypto1,crypto2)
-            console.log(prices1);
+            //console.log(prices1);
         
 
 
     }
 
-    console.log(chartData);
+    //console.log(chartData);
 
     useEffect(()=>{
             intialData()
@@ -95,7 +95,7 @@ export default function ComparePage(params) {
         <div className='compare-wrapper'>
             <SelectCoins crypto1={crypto1} crypto2={crypto2}
             handleCoinsChange={handleCoinsChange}/>
-            <SelectDays days={days} handleDaysChange={handleDaysChange} />
+            <SelectDays days={days} label="days" handleDaysChange={handleDaysChange} />
         </div>
         <div className='compare-lists'>
         {crypto1Data && <List coin={crypto1Data} />}

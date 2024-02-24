@@ -2,11 +2,19 @@
     margin-left: 0.4rem;
 }
 
+
 .compare-main .select-days{
     display: flex;
-    width: 90%;
+    width: 180px;
     /* background-color: red; */
     justify-content: space-between;
     padding: 0.5rem 0.5rem;
     margin: auto;
+}
+
+@media only screen and (max-width: 700px) {
+    .compare-main .select-days{
+        /* background-color: red; */
+        width: 70%;
+    }  
 }

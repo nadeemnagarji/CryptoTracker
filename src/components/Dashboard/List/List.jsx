@@ -4,11 +4,15 @@ import TrendingUpIcon from '@mui/icons-material/TrendingUp';
 import TrendingDownIcon from '@mui/icons-material/TrendingDown';
 import { Tooltip } from '@mui/material';
 import { convertNumbers } from '../../../functions/convertNumber';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+
 export default function List({coin}) {
+    
+    const navigate = useNavigate()
+    
     return(
-        <Link to={`/coin/${coin.id}`} >
-        <tr className='list-row'>
+        // <Link to={`/coin/${coin.id}`} >
+        <tr onClick={()=>navigate(`/coin/${coin.id}`)} className='list-row'>
             <Tooltip  title="Logo">
         <td className='image-title td-image'>
                 <img className='logo' src={coin.image} alt="" />
@@ -69,6 +73,6 @@ export default function List({coin}) {
             </td>
             </Tooltip>
         </tr>
-        </Link>
+        // </Link>
     )
 };
