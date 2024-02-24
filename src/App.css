@@ -127,4 +127,20 @@ html{
   padding: 0.5rem 0.5rem;
 
 }
+.compare-charts{
+  width: 90%;
+  padding: 0.5rem 0.5rem;
+  margin: auto;
+  align-items: center;
+  justify-content: center;
 
+}
+.compare-charts {
+  width: 100%;
+}
+.compare-main .line-chart{
+  width: 90%;
+}
+.compare-main .chart-wraper{
+  justify-content: center;
+}

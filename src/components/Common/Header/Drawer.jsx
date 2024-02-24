@@ -13,6 +13,7 @@ const [open,setOpen] = React.useState(false)
             anchor={"right"}
             open={open}
             onClose={()=>setOpen(false)}
+            onOpen={() => setOpen(true)} 
             >
           <div className='drawer-links'>
             <a href=""><p>Home</p></a>

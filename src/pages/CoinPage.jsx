@@ -60,7 +60,7 @@ export default function CoinPage(params) {
            // console.log(price);
           };
 
-
+          console.log(chartData);
     useEffect(()=>{
        fetchCoins(id)
     },[])
@@ -86,7 +86,8 @@ export default function CoinPage(params) {
                 <div className='price-mk-vol-toggle'>
                     <ColorToggleButton alignment={alignment} handleTypeChange={handleTypeChange}/>
                 </div>
-           {chartData && <LineChart className="line-chart" chartdata={chartData} priceType={priceType} />}
+           {chartData && <LineChart className="line-chart" 
+           chartdata={chartData} priceType={priceType} />}
             </div>
             <CoinInfo heading={coin.name} desc={coin.desc} />
             </>
