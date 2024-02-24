@@ -7,11 +7,16 @@ export default function ColorToggleButton({alignment,handleTypeChange}) {
 //  const [alignment, setAlignment] = React.useState('web');
 
 
+  const style = {
+    color:"var(--white)"
+}
+
 
   return (
     <ToggleButtonGroup
       color="primary"
       value={alignment}
+      sx={style}
       exclusive
       onChange={handleTypeChange}
       aria-label="Platform"
