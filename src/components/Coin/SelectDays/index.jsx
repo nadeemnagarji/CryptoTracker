@@ -14,10 +14,10 @@ export default function SelectDays({days,handleDaysChange}) {
   
 
   return (
-    <div  sx={{ minWidth: 120, maxWidth:100 }}>
+    <div  className='select-days' sx={{ minWidth: 120, maxWidth:100 }}>
 
-        
-        <Select
+        <p>Days</p>
+        <Select 
             labelId="demo-simple-select-label"
             id="demo-simple-select"
             value={days}

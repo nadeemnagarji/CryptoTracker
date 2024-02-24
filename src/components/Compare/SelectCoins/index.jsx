@@ -19,7 +19,12 @@ export default function SelectCoins({crypto1,crypto2,handleCoinsChange}) {
         setAllCoins(myCoins)
     }
 
-    
+    const style = {
+        width:"100px",
+        minWidth: "140px",
+        maxWidth:"100px",
+
+    }
 
 
     useEffect(()=>{
@@ -28,11 +33,12 @@ export default function SelectCoins({crypto1,crypto2,handleCoinsChange}) {
 
 
     return (
-    <div className='selectcoins-container' sx={{ minWidth: 120, maxWidth:100 }}>
+    <div className='selectcoins-container' sx={style}>
 
        <div>
         <p>Crypto 1</p>
        <Select
+            sx={style}
             labelId="demo-simple-select-label"
             id="demo-simple-select"
             value={crypto1}
@@ -47,6 +53,7 @@ export default function SelectCoins({crypto1,crypto2,handleCoinsChange}) {
         <div>
         <p>Crypto 2</p>
        <Select
+            sx={style}
             labelId="demo-simple-select-label"
             id="demo-simple-select"
             value={crypto2}

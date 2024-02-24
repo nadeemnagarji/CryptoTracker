@@ -1,0 +1,12 @@
+#demo-simple-select{
+    margin-left: 0.4rem;
+}
+
+.compare-main .select-days{
+    display: flex;
+    width: 90%;
+    /* background-color: red; */
+    justify-content: space-between;
+    padding: 0.5rem 0.5rem;
+    margin: auto;
+}

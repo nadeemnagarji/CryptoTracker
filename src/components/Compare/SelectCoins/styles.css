@@ -7,3 +7,27 @@
     display: flex;
     gap: 0.5rem;
 }
+
+
+@media only screen and (max-width: 700px) {
+
+.selectcoins-container{
+    flex-direction: column;
+    /* background-color: red; */
+    width: 100%;
+    align-items: center;
+}
+.selectcoins-container div{
+ justify-content: center;
+ /* background-color: yellow; */
+ width: 100%;
+}
+.selectcoins-container div p{
+    width: 50%;
+}
+
+.width-phone{
+    
+}
+
+}
