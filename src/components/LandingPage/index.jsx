@@ -3,9 +3,9 @@ import  './styles.css'
 import Button from '../Common/Button';
 import Phone from '../../assets/phone.png'
 import gradient from '../../assets/gradient.png'
-
 import {motion} from "framer-motion"
 import MotionButton from '../Common/MotionButton';
+import { Link } from 'react-router-dom';
 export default function MainComponent(params) {
     return(
         <div className='main'>
@@ -35,9 +35,9 @@ export default function MainComponent(params) {
                 initial={{opacity:0,translateX:50}}
                 animate={{opacity:1,translateX:0}}
                 transition={{duration:0.5,delay:1.5}}  className='main-btn'>
-                    <MotionButton name={"Dashboard"}
+                 <Link to="/dashboard">   <MotionButton name={"Dashboard"}
                    
-                    />
+                    /> </Link>
                     <MotionButton name={"Share"} outline={"true"} />
                 </motion.div>
             </div>

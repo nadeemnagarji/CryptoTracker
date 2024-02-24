@@ -13,9 +13,9 @@ export default function Header(params) {
   }
     return(
         <div className='navbar'>
-          <h1 className='logo'>CryptoTracker</h1>
+          <Link to="/"><h1 className='logo'>CryptoTracker</h1> </Link>
           <div className='nav-links'>
-            <a href=""><p>Home</p></a>
+            <a href="/"><p>Home</p></a>
             <Link to="/compare"><p>Compare</p></Link>
             <Button name={"Dashboard"} outline={false} onClickFn={moveToDashBoard} />
            
