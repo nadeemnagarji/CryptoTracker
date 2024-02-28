@@ -11,6 +11,26 @@
   --red:#f94141;
 }
 
+body[theme="dark"]{
+  --white:#fff;
+  --black:#111;
+  --blue:#3a80e9;
+  --grey:#888;
+  --darkgrey:#1b1b1b;
+  --green:#61c96f;
+  --red:#f94141;
+}
+
+body[theme="light"]{
+  --white:#111;
+  --black:#fff;
+  --blue:#3a80e9;
+  --grey:#111;
+  --darkgrey:#ddd;
+  --green:#1da72f;
+  --red:#f94141;
+}
+
 img {
   -webkit-user-drag: none;
   -khtml-user-drag: none;
