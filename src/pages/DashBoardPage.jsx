@@ -11,7 +11,8 @@ import BackToTop from '../components/Common/BacktoTop';
 
 export default function DashBoardPage(params) {
     const[input,setInput] = useState(null)
-    const [coins ,setCoins] = useState([])
+    const [coins,setCoins] = useState([])
+    
     const [page,setPage] = useState(1)
     const [paginatedCoins,setPaginatedCoins] = useState([])
     const [isloading,setisLoading] = useState(true)
@@ -27,7 +28,7 @@ export default function DashBoardPage(params) {
        
     }
 
-
+      //  console.log(paginatedCoins);
     const fetchCoins = async()=>{
         try {
             const res = await axios.get("https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false&locale=en")

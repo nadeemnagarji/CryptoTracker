@@ -3,10 +3,12 @@ import SwipeableDrawer from '@mui/material/SwipeableDrawer';
 import Button from '@mui/material/Button';
 import MenuIcon from '@mui/icons-material/Menu';
 import { Link } from 'react-router-dom';
+import { usetheme } from '../../../ThemeContext/ThemeContext';
+
 
 export default function TempDrawer() {
 const [open,setOpen] = React.useState(false)
-
+const {toggleTheme} = usetheme()
 
   return (
     <div>
@@ -22,6 +24,7 @@ const [open,setOpen] = React.useState(false)
             <Link to="/compare"><p>Compare</p></Link>
             <Link to="/dashboard"><p>Dashboard</p></Link>
             </div>
+            <Button name={"Switch Theme"} outline={false} onClickFn={toggleTheme} />
           </SwipeableDrawer>
     </div>
   );

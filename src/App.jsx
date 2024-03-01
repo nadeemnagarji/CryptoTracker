@@ -12,6 +12,8 @@ import ComparePage from './pages/ComparePage.jsx'
 import CoinPage from './pages/CoinPage.jsx'
 import { ThemeProvider } from '@emotion/react'
 import { createTheme } from '@mui/material'
+import { ConListContextProvider } from './contexts/CoinListContext.jsx'
+import WishListPage from './pages/WishListPage.jsx'
 
 
 
@@ -28,6 +30,7 @@ const theme = createTheme({
 
   return (
     <ThemeProvider theme={theme}>
+      <ConListContextProvider>
     <div className='App'> 
     <BrowserRouter>
       <Routes>
@@ -35,10 +38,11 @@ const theme = createTheme({
         <Route path="/dashboard" element={<DashBoardPage />} />
         <Route path='/coin/:id' element={<CoinPage/>} />
         <Route path='/compare' element={<ComparePage/>} />
-        <Route path='/watchlist' element={<HomePage/>} />
+        <Route path='/wishlist' element={<WishListPage/>} />
       </Routes>
     </BrowserRouter>
     </div>
+    </ConListContextProvider>
     </ThemeProvider>
   )
 }

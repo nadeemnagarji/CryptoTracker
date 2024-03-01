@@ -52,6 +52,7 @@ a p:hover{
 @media only screen and (max-width:800px){
     .logo{
         font-size: 1rem;
+        margin-top: 1rem;
     }
 
 
@@ -59,8 +60,8 @@ a p:hover{
         display: none;
     }
     .drawer{
-        display: block;
-       
+        display:flex;
+        
     }
     .drawer-links{
         background-color: var(--darkgrey);

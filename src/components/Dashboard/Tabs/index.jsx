@@ -1,4 +1,4 @@
-import  React from 'react';
+import  React, { useState } from 'react';
 import Box from '@mui/material/Box';
 import Tab from '@mui/material/Tab';
 import TabContext from '@mui/lab/TabContext';
@@ -10,8 +10,8 @@ import List from '../List/List';
 
 
 export default function Tabs({coins}) {
-  const [value, setValue] = React.useState('List');
-
+  const [value, setValue] = React.useState('grid');
+  const [star,unstar] = useState(false)
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };

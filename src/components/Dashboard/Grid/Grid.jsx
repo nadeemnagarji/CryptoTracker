@@ -1,20 +1,68 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './styles.css'
 import TrendingUpIcon from '@mui/icons-material/TrendingUp';
 import TrendingDownIcon from '@mui/icons-material/TrendingDown';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import StarOutlineIcon from '@mui/icons-material/StarOutline';
+import StarIcon from '@mui/icons-material/Star';
+import { useCoinList } from '../../../contexts/CoinListContext';
+
+
 
 export default function Grid({coin}) {
-    
+    const [add,setAdd] = useState(false)
+    const {coins,setCoins,setCoinsData,coinsdata} = useCoinList()
+    const navigate = useNavigate()
+    const [localPresent,setLocalPresent] = useState(false)
+
+       // console.log(coin.id);
+    const handleAdd = async(e)=>{
+        e.stopPropagation();
+        //console.log(coins);
+        //console.log(coinsdata);
+        if(add){
+            
+            setCoins((prevCoins) => prevCoins.filter((id) => id !== coin.id));
+            setCoinsData((prevcoins)=> prevcoins.filter((item)=> item.id !== coin.id))
+           // console.log("added");
+        }else{
+            setCoins((prevCoins)=> [...prevCoins,coin.id])
+            const newcoinsdata = [...coinsdata,coin]
+
+            setCoinsData(newcoinsdata)
+
+        }
+
+        setAdd((prevAdd) => !prevAdd);
+    }
+    // console.log(add);
+    const moveToCoinPage = ()=>{
+        navigate(`/coin/${coin.id}`)
+    }
+
+
+
+useEffect(()=>{
+//as soon as the component loads we check if this coin is present in wishlist if yes then we 
+// mark it as added (setAdd(true)) so that user can see a filled star and when he clicks on that star 
+// else condition of handleadd function runs and eventually remove that coin from the wishlist
+
+
+    setAdd(coins.includes(coin.id));
+},[coins,coin.id])
+
     return(
-        <Link to={`/coin/${coin.id}`}>
-        <div className={`grid-container ${
+       
+        <div onClick={moveToCoinPage} className={`grid-container ${
             coin.price_change_percentage_24h <0 && "grid-container-red"
         }`}>
             <div className='image-title'>
                 <img className='logo' src={coin.image} alt="" />
                 <div className='coin-info'>
-                    <p className='symbol'>{coin.symbol.toUpperCase()}-USD</p>
+                    <p className='symbol'>{coin.symbol.toUpperCase()}-USD 
+                    {add ===true?  <span onClick={(e)=>handleAdd(e)} ><StarIcon/></span> 
+                    :<span onClick={(e)=>handleAdd(e)}><StarOutlineIcon /></span>} </p> 
+                    
                     <p className='name'>{coin.id}</p>
                 </div>
             </div>
@@ -46,7 +94,7 @@ export default function Grid({coin}) {
             <p className='volume'><span>Total Volume:</span> {coin.total_volume.toLocaleString()}</p>
             <p className='mar-cap'><span>Market Cap : $</span>{coin.market_cap.toLocaleString()}</p>
         </div>
-        </Link>
+
     )
 };
 
